@@ -1,48 +1,42 @@
 import './App.css'
 
-function App() {
-    const pi = Math.PI;
-    let name = "Guest";
-    const buttonLabel = "Proceed";
-    const buttonLabel2 = "Surprise Me";
-    const image = "https://placehold.co/400x200/png";
-    const isLoggedin = true;
-    const coupon = Math.floor(Math.random() * 90000000) + 10000000;
-    // Ternary operator
-    const loginStatus = isLoggedin ? "You are logged in" : "You are not logged in";
-    const orders = ["pasta"];
-    const showOrders = <p>Current orders: {orders.length}</p>
-    if (isLoggedin) {
-        name = "John Doe"
-        return (
-            <>
-                <h1>Welcome, {name}</h1>
-                <h2>{loginStatus}</h2>
-                <img src={image} alt="placeholder image" />
-                <br />
-                {pi}
-                <br />
-                {/* And Logic */}
-                {orders.length > 0 && showOrders}
-                <button style={{ backgroundColor: 'green', color: 'white', margin: '10px' }}>
-                    {buttonLabel}
-                </button>
+function Welcome(name: string): string {
+    return "Welcome, " + name + "!";
+}
 
-                <button onClick={() => alert(`Here's a Pizza Coupon! ` + coupon)}
-                    style={{ backgroundColor: 'blue', color: 'white', margin: '10px' }}>
-                    {buttonLabel2}
-                </button>
-            </>
-        )
+function GreetInTime(hours: number): string {
+    if (hours < 12) {
+        return "Good morning";
+    } else if (hours < 18) {
+        return "Good afternoon";
     } else {
-        return (
-            <>
-                <h1>Welcome, {name}</h1>
-                <h2>{loginStatus}</h2>
-                <h2>Please Log in</h2>
-            </>
-        )
+        return "Good evening";
     }
+}
+
+function AlertMessage(message: string) {
+    return <div style={{
+        "color": "red"
+    }}>{message}</div>;
+}
+
+function ShowAlert(condition: boolean, message: string) {
+    if (condition) {
+        return AlertMessage(message);
+    }
+    return null;
+}
+
+function App() {
+    const now = new Date();
+    const hours = now.getHours();
+    return (
+        <>
+            <h1>{Welcome("Bob")}</h1>
+            <h2>{GreetInTime(hours)}</h2>
+            {ShowAlert(true, "Very Important Message")}
+        </>
+    )
 }
 
 export default App
