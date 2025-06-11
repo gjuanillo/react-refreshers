@@ -1,41 +1,32 @@
 import './App.css'
 
-function Welcome(name: string): string {
-    return "Welcome, " + name + "!";
-}
-
-function GreetInTime(hours: number): string {
-    if (hours < 12) {
-        return "Good morning";
-    } else if (hours < 18) {
-        return "Good afternoon";
-    } else {
-        return "Good evening";
-    }
-}
-
-function AlertMessage(message: string) {
-    return <div style={{
-        "color": "red"
-    }}>{message}</div>;
-}
-
-function ShowAlert(condition: boolean, message: string) {
-    if (condition) {
-        return AlertMessage(message);
-    }
-    return null;
-}
-
 function App() {
-    const now = new Date();
-    const hours = now.getHours();
+    const name = "John Doe";
+    const profession = "Full Stack AI Developer & Data Analyst";
+    const projects = [
+        {
+            title: "project title 1",
+            description: "description here",
+            link: "#"
+        },
+        {
+            title: "project title 2",
+            description: "description here",
+            link: "#"
+        }
+    ]
     return (
-        <>
-            <h1>{Welcome("Bob")}</h1>
-            <h2>{GreetInTime(hours)}</h2>
-            {ShowAlert(true, "Very Important Message")}
-        </>
+        <div className='App'>
+           <header className='header'>
+                <h1>{name}</h1>
+                <p>{profession}</p>
+                <nav>
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header> 
+        </div>
     )
 }
 
