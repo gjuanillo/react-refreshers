@@ -1,42 +1,67 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+a {
+    text-decoration: none;
+    color: white;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover{
+    text-decoration: underline;
+    color: #242424; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.header {
+    background-color: #60716f;
+    padding: 20px;
+    text-align: center;
+    margin: 15px;
+    border-radius: 10px;
 }
 
-.card {
-  padding: 2em;
+.header nav a {
+    margin: 0 10px;
 }
 
-.read-the-docs {
-  color: #888;
+/* About */
+.about-section{
+    padding: 50px;
+    margin: 20px;
+}
+
+.about-section h2, .projects-section h2, .contact-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Projects */
+.projects-section {
+    padding: 50px;
+    margin: 20px;
+}
+
+.projects-list .project-item {
+    margin-bottom: 30px;
+}
+
+.projects-list .project-item h3 {
+    margin-bottom: 30px;
+}
+
+.projects-list .project-item a {
+    color: #93cec8; 
+}
+
+/* Contacts */
+.contact-section {
+    padding: 50px;
+    margin: 20px;
+    text-align: center;
+}
+
+/* Footer */
+.footer {
+    padding: 20px;
+    text-align: center;
 }
