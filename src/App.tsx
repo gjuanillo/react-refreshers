@@ -6,12 +6,12 @@ function App() {
     const projects = [
         {
             title: "project title 1",
-            description: "description here",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum lacus vitae magna congue, sed pellentesque eros iaculis. Integer tempor eleifend dolor, id eleifend turpis laoreet eget.",
             link: "#"
         },
         {
             title: "project title 2",
-            description: "description here",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum lacus vitae magna congue, sed pellentesque eros iaculis. Integer tempor eleifend dolor, id eleifend turpis laoreet eget.",
             link: "#"
         }
     ]
@@ -31,8 +31,10 @@ function App() {
             {/* About Section */}
             <section id='about' className='about-section'>
                 <h2>About</h2>
-                <p>Description</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum lacus vitae magna congue, sed pellentesque eros iaculis. Integer tempor eleifend dolor, id eleifend turpis laoreet eget. Integer tristique ornare urna at semper. Etiam ut felis mollis, aliquam purus sed, lobortis mi. Vestibulum porttitor libero quis bibendum faucibus. Phasellus dignissim sollicitudin libero, non tristique risus suscipit quis. </p>
             </section>
+
+            <hr/>
 
             {/* Projects Section */}
             <section id='projects' className='projects-section'>
@@ -41,12 +43,14 @@ function App() {
                     {projects.map((project, index) => (
                         <div key={index} className='project-item'>
                             <h3>{project.title}</h3>
-                            <h4>{project.description}</h4>
+                            <p>{project.description}</p>
                             <a href={project.link}>View Project</a>
                         </div>
                     ))}
                 </div>
             </section>
+
+            <hr/>
 
             {/* Contact Section */}
             <section id='contact' className='contact-section'>
@@ -54,6 +58,8 @@ function App() {
                 <p>Description</p>
                 <a href='mailto:addres@email.com'>email</a>
             </section>
+
+            <hr/>
 
             {/* Footer Section */}
             <footer className='footer'>

@@ -27,17 +27,17 @@ a:hover{
 
 /* About */
 .about-section{
-    padding: 50px;
+    padding: 30px;
     margin: 20px;
 }
 
 .about-section h2, .projects-section h2, .contact-section h2 {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 /* Projects */
 .projects-section {
-    padding: 50px;
+    padding: 30px;
     margin: 20px;
 }
 
@@ -55,7 +55,7 @@ a:hover{
 
 /* Contacts */
 .contact-section {
-    padding: 50px;
+    padding: 30px;
     margin: 20px;
     text-align: center;
 }
@@ -64,4 +64,8 @@ a:hover{
 .footer {
     padding: 20px;
     text-align: center;
+}
+
+hr {
+    margin: 30px;
 }
