@@ -50,7 +50,11 @@ a:hover{
 }
 
 .projects-list .project-item a {
+    margin-right: 10px;
     color: #93cec8; 
+}
+.projects-list .project-item a:hover {
+    color: #ffffff; 
 }
 
 /* Contacts */
