@@ -1,9 +1,9 @@
 type AboutProps = {
     technologies: string[];
-    onDefClick: (definition: string) => void;
+    onDefClick: (definition: string, defIndex : number) => void;
 }
 
-function About({ technologies, onDefClick}: AboutProps) {
+function About({ technologies, onDefClick }: AboutProps) {
     return (
         <section id='about' className='about-section'>
             <h2>About</h2>
@@ -11,7 +11,7 @@ function About({ technologies, onDefClick}: AboutProps) {
             {
                 technologies.map((technology, index) => (
                     <p key={index} 
-                        onClick={() => onDefClick(technology)}>
+                        onClick={() => onDefClick(technology, index)}>
                         {technology}
                     </p>
                 ))
