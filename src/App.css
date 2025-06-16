@@ -64,6 +64,10 @@ a:hover{
     text-align: center;
 }
 
+.counterButton {
+    margin: 0 10px;
+}
+
 /* Footer */
 .footer {
     padding: 20px;

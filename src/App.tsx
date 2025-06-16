@@ -1,6 +1,7 @@
 import About from './About';
 import './App.css'
 import Contact from './Contact';
+import Counter from './Counter';
 import Footer from './Footer';
 import Header from './Header'
 import Projects from './Projects';
@@ -50,6 +51,7 @@ function App() {
             <hr />
             {/* Projects Section */}
             <Projects project={projects}/>
+            <Counter/>
             <hr />
             {/* Contact Section */}
             <Contact/>
