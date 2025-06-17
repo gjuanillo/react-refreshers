@@ -11,18 +11,26 @@ function App() {
 
     const fullName : string = "John Doe";
     const profession : string = "Full Stack AI Engineer & Data Analyst";
-    const technologies : string[] = [
-        "Spring Framework",
-        "React Typescript",
-        "Postgresql",
-        "Amazon Web Services"];
-    const definition : string[] = [
-        "A powerful, open-source Java framework used for building enterprise-level applications, particularly web services and APIs.",
-        "A combination of the React library for building user interfaces and TypeScript, a statically typed superset of JavaScript, enabling safer and more scalable front-end development.",
-        "An advanced, open-source relational database management system known for its robustness, extensibility, and standards compliance.",
-        "A comprehensive cloud computing platform by Amazon offering scalable infrastructure and services such as computing power, storage, and databases."];
-    const techDef = (tech : string, defIndex : number) : void => {
-        alert(`Definition for ${tech}: ${definition[defIndex]}`)
+    const technologies = [
+        {
+            name: "Spring Framework",
+            definition: "A powerful, open-source Java framework used for building enterprise-level applications, particularly web services and APIs."
+        },
+        {
+            name: "React Typescript",
+            definition: "A combination of the React library for building user interfaces and TypeScript, a statically typed superset of JavaScript, enabling safer and more scalable front-end development."
+        },
+        {
+            name: "Postgresql",
+            definition: "An advanced, open-source relational database management system known for its robustness, extensibility, and standards compliance."
+        },
+        {
+            name: "Amazon Web Services",
+            definition: "A comprehensive cloud computing platform by Amazon offering scalable infrastructure and services such as computing power, storage, and databases."
+        }
+    ];
+    const techDef = (tech : string, definition : string) : void => {
+        alert(`Definition for ${tech}: ${definition}`)
     }
     const projects : Project[] = [
         {
