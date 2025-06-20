@@ -8,9 +8,9 @@ a {
     color: white;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
-    color: #242424; 
+    color: #242424;
 }
 
 .header {
@@ -26,12 +26,14 @@ a:hover{
 }
 
 /* About */
-.about-section{
+.about-section {
     padding: 30px;
     margin: 20px;
 }
 
-.about-section h2, .projects-section h2, .contact-section h2 {
+.about-section h2,
+.projects-section h2,
+.contact-section h2 {
     margin-bottom: 40px;
 }
 
@@ -51,10 +53,11 @@ a:hover{
 
 .projects-list .project-item a {
     margin-right: 10px;
-    color: #93cec8; 
+    color: #93cec8;
 }
+
 .projects-list .project-item a:hover {
-    color: #ffffff; 
+    color: #ffffff;
 }
 
 /* Contacts */

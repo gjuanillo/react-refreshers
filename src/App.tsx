@@ -9,8 +9,8 @@ import type { Project } from './types';
 
 function App() {
 
-    const fullName : string = "John Doe";
-    const profession : string = "Full Stack AI Engineer & Data Analyst";
+    const fullName: string = "John Doe";
+    const profession: string = "Full Stack AI Engineer & Data Analyst";
     const technologies = [
         {
             name: "Spring Framework",
@@ -29,10 +29,10 @@ function App() {
             definition: "A comprehensive cloud computing platform by Amazon offering scalable infrastructure and services such as computing power, storage, and databases."
         }
     ];
-    const techDef = (tech : string, definition : string) : void => {
+    const techDef = (tech: string, definition: string): void => {
         alert(`Definition for ${tech}: ${definition}`)
     }
-    const projects : Project[] = [
+    const projects: Project[] = [
         {
             title: "Project Title 1",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum lacus vitae magna congue, sed pellentesque eros iaculis. Integer tempor eleifend dolor, id eleifend turpis laoreet eget.",
@@ -53,19 +53,19 @@ function App() {
     return (
         <div className='App'>
             {/* Header Section */}
-            <Header fullName={fullName} profession={profession}/>
+            <Header fullName={fullName} profession={profession} />
             {/* About Section */}
-            <About technologies={technologies} onDefClick={techDef}/>
+            <About technologies={technologies} onDefClick={techDef} />
             <hr />
             {/* Projects Section */}
-            <Projects project={projects}/>
-            <Counter/>
+            <Projects project={projects} />
+            <Counter />
             <hr />
             {/* Contact Section */}
-            <Contact/>
+            <Contact />
             <hr />
             {/* Footer Section */}
-            <Footer/>
+            <Footer />
         </div>
     )
 }
