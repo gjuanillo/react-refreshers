@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 
 const Counter: React.FC = () => {
-    const message : string = "Text";
-    const [count, setCount] = useState<string>(message);
+    const initialNumber : number = 0;
+    const initialStep : number = 1;
+    const [count, setCount] = useState<number>(initialNumber);
+    const [steps, setSteps] = useState<number>(initialStep);
 
-    const message1 : string = "UpdatedText1";
-    const message2 : string = "UpdatedText2";
 
     const increment = () => {
-        setCount(message1);
+        setCount(count + steps);
     };
     const decrement = () => {
-        setCount(message2);
+        setCount(count - steps);
     };
 
     return (
         <div className='contact-section'>
             <p>Count: {count}</p>
-            <button className='counterButton' onClick={increment}>Update</button>
-            <button className='counterButton' onClick={decrement}>Update</button>
+            <input type='number' value={steps} 
+                onChange={(e) => setSteps(parseInt(e.target.value))}/>
+            <button className='counterButton' onClick={increment}>Increment</button>
+            <button className='counterButton' onClick={decrement}>Decrement</button>
         </div>
     );
 };
