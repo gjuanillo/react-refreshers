@@ -5,6 +5,7 @@ import Counter from './Counter';
 import Footer from './Footer';
 import Header from './Header'
 import Projects from './Projects';
+import Skills from './Skills';
 import type { Project } from './types';
 
 function App() {
@@ -50,6 +51,11 @@ function App() {
             description: "The description"
         }
     ]
+    const skills = [
+        { name: "TypeScript", level: "Advanced" },
+        { name: "Spring Boot", level: "Intermediate" },
+        { name: "Docker", level: "Beginner" }
+    ];
     return (
         <div className='App'>
             {/* Header Section */}
@@ -59,6 +65,7 @@ function App() {
             <hr />
             {/* Projects Section */}
             <Projects project={projects} />
+            <Skills skills={skills}/>
             <Counter />
             <hr />
             {/* Contact Section */}
