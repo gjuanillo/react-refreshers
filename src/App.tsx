@@ -6,6 +6,7 @@ import Footer from './Footer';
 import Header from './Header'
 import Projects from './Projects';
 import Skills from './Skills';
+import Testimonials from './Testimonials';
 import type { Project } from './types';
 
 function App() {
@@ -56,6 +57,11 @@ function App() {
         { name: "Spring Boot", level: "Intermediate" },
         { name: "Docker", level: "Beginner" }
     ];
+    const testimonials = [
+        { author: "Alice Smith", content: "Working with John was a breeze!", role: "Product Manager" },
+        { author: "Bob Lee", content: "He delivered every milestone on time.", role: "Team Lead" },
+        { author: "Carla Gomez", content: "Very professional and communicative.", role: "CTO" }
+    ];
     return (
         <div className='App'>
             {/* Header Section */}
@@ -65,7 +71,8 @@ function App() {
             <hr />
             {/* Projects Section */}
             <Projects project={projects} />
-            <Skills skills={skills}/>
+            <Skills skills={skills} />
+            <Testimonials testimonials={testimonials}/>
             <Counter />
             <hr />
             {/* Contact Section */}
