@@ -2,6 +2,7 @@ import About from './About';
 import './App.css'
 import Contact from './Contact';
 import Counter from './Counter';
+import Experience from './Experience';
 import Footer from './Footer';
 import Header from './Header'
 import Projects from './Projects';
@@ -34,6 +35,28 @@ function App() {
     const techDef = (tech: string, definition: string): void => {
         alert(`Definition for ${tech}: ${definition}`)
     }
+
+    const experiences = [
+        {
+            company: "This Company",
+            role: "Freelance Full Stack Developer",
+            duration: "Jan 2025 – Apr 2025",
+            description: "Developed an e-commerce website dedicated for the company's specific product"
+        },
+        {
+            company: "That University",
+            role: "Lead AI Developer",
+            duration: "May 2024 – Dec 2024",
+            description: "Built a customize chatbot that can dessiminate announcements and answer related queries."
+        },
+        {
+            company: "Those University",
+            role: "B.S. in Computer Science",
+            duration: "2019 – 2023",
+            description: "Focused on AI, software engineering, and systems programming."
+        }
+    ];
+
     const projects: Project[] = [
         {
             title: "Project Title 1",
@@ -69,10 +92,11 @@ function App() {
             {/* About Section */}
             <About technologies={technologies} onDefClick={techDef} />
             <hr />
+            <Experience experiences={experiences}/>
             {/* Projects Section */}
             <Projects project={projects} />
             <Skills skills={skills} />
-            <Testimonials testimonials={testimonials}/>
+            <Testimonials testimonials={testimonials} />
             <Counter />
             <hr />
             {/* Contact Section */}
