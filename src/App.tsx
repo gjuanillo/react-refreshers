@@ -6,6 +6,7 @@ import Experience from './Experience';
 import Footer from './Footer';
 import Header from './Header'
 import Projects from './Projects';
+import ScrollSpy from './ScrollSpy';
 import Skills from './Skills';
 import Testimonials from './Testimonials';
 import type { Project } from './types';
@@ -89,6 +90,9 @@ function App() {
         <div className='App'>
             {/* Header Section */}
             <Header fullName={fullName} profession={profession} />
+
+            <ScrollSpy sectionIds={['about', 'projects', 'contact']}/>
+
             {/* About Section */}
             <About technologies={technologies} onDefClick={techDef} />
             <hr />
