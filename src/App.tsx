@@ -10,6 +10,7 @@ import ScrollSpy from './ScrollSpy';
 import Skills from './Skills';
 import Testimonials from './Testimonials';
 import type { Project } from './types';
+import TypingBanner from './TypingBanner';
 
 function App() {
 
@@ -89,10 +90,9 @@ function App() {
     return (
         <div className='App'>
             {/* Header Section */}
-            <Header fullName={fullName} profession={profession} />
-
             <ScrollSpy sectionIds={['about', 'projects', 'contact']}/>
-
+            <Header fullName={fullName} profession={profession} />
+            <TypingBanner/>
             {/* About Section */}
             <About technologies={technologies} onDefClick={techDef} />
             <hr />
