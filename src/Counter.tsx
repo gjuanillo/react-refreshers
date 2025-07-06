@@ -19,8 +19,12 @@ const Counter: React.FC = () => {
         // Count is not updated during the function, making the value of count to 0, 
         // meaning setting count to 0 + 1, then setting count to 0 + 1. 
         // Making the function to only increment one steps
-        setCount(count + 1);
-        setCount(count + 1);
+        // setCount(count + 1);
+        // setCount(count + 1);
+        // Correct Method
+        // Use updater function to get a hold of previous set count value
+        setCount(prevCount => prevCount + 1);
+        setCount(prevCount => prevCount + 1)
     }
 
     return (
