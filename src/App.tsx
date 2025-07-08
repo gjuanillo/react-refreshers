@@ -1,12 +1,11 @@
 import './App.css'
-import FormExample from './FormExample';
-
+import ColorPicker from './ColorPicker';
 
 function App() {
 
     return (
         <>
-            <FormExample/>
+            <ColorPicker/>
         </>
     )
 
