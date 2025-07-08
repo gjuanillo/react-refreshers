@@ -1,4 +1,5 @@
 import './App.css'
+import type { ChangeEvent } from 'react';
 import { useState } from 'react';
 import type { FormDataType } from './FormDataType';
 
@@ -14,11 +15,13 @@ function App() {
         }
     );
 
-    const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData(
-            { ...formData, [name]: type === 'checkbox' ? checked : value }
-        );
+    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+        const target = e.target as HTMLInputElement
+        const { name, value, type, checked } = target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? checked : value
+        }));
 
     };
     return (
