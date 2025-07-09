@@ -1,11 +1,11 @@
 import './App.css'
-import ColorPicker from './ColorPicker';
+import MouseTracker from './MouseTracker';
 
 function App() {
 
     return (
         <>
-            <ColorPicker/>
+            <MouseTracker/>
         </>
     )
 

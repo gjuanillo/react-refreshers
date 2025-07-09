@@ -174,3 +174,12 @@ h1 {
 .custom-color-picker input:hover {
     background-color: cyan;
 }
+
+.mouse-tracker {
+    font-family: monospace;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    padding-top: 40px;
+    min-height: 100vh;
+}
