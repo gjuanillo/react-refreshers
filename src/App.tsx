@@ -1,11 +1,11 @@
 import './App.css'
-import MouseTracker from './MouseTracker';
+import ParentComponent from './ParentComponent';
 
 function App() {
 
     return (
         <>
-            <MouseTracker/>
+            <ParentComponent/>
         </>
     )
 

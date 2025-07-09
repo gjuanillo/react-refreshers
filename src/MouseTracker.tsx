@@ -6,11 +6,11 @@ type Position = {
 };
 
 function MouseTracker() {
-    const [mousePosition, setMousePosition] = useState<Position>({x: 0, y: 0});
+    const [mousePosition, setMousePosition] = useState<Position>({ x: 0, y: 0 });
 
     useEffect(() => {
-        const handleMouseMove = (event : MouseEvent) => {
-            setMousePosition({x: event.clientX, y: event.clientY});
+        const handleMouseMove = (event: MouseEvent) => {
+            setMousePosition({ x: event.clientX, y: event.clientY });
         };
         window.addEventListener('mousemove', handleMouseMove);
 
