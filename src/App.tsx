@@ -1,32 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import './App.css'
 
 function App() {
+    const inputRef = useRef<HTMLInputElement | null>(null);
 
-    const [stateCount, setStateCount] = useState(0);
-    const refCount = useRef(0);
-
-    useEffect(() => {
-        console.log('Component Re-rendered');
-    });
-
-    const incrementStateCount = () => {
-        setStateCount(stateCount + 1);
-    }
-
-    const incrementRefCount = () => {
-        refCount.current += 1;
-        console.log(`Ref Count ${refCount.current}`)
-    }
+    const focusInput = (): void => {
+        if (inputRef.current) {
+            inputRef.current.focus();
+            inputRef.current.style.backgroundColor = 'cyan';
+        }
+    };
 
     return (
         <>
             <div>
-                <p>State Count:  {stateCount}</p>
-                <button onClick={incrementStateCount}>Increment</button>
-
-                <p>Ref Count:  {refCount.current}</p>
-                <button onClick={incrementRefCount}>Increment</button>
+                <h1>Learn React</h1>
+                <input ref={inputRef} type='text' placeholder='Focus me' />
+                <button onClick={focusInput}>Focus</button>
             </div>
         </>
     )
