@@ -1,24 +1,39 @@
-import { useRef } from 'react';
 import './App.css'
 
-function App() {
-    const inputRef = useRef<HTMLInputElement | null>(null);
+function ComponentA({ theme }: { theme: string }) {
+    return (
+        <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
+            <h2>Component A</h2>
+            <ComponentB theme={theme}/>
+        </div>
+    )
+}
 
-    const focusInput = (): void => {
-        if (inputRef.current) {
-            inputRef.current.focus();
-            inputRef.current.style.backgroundColor = 'cyan';
-        }
-    };
+function ComponentB({ theme }: { theme: string }) {
+    return (
+        <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
+            <h2>Component B</h2>
+            <ThemedComponent theme={theme}/>
+        </div>
+    )
+}
+function ThemedComponent({ theme }: { theme: string }){
+    return (
+        <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
+            <h2>Themed Component</h2>
+            <p>The current theme is: {theme}</p>
+        </div>
+    )
+}
+
+function App() {
+    const theme: string = 'dark';
 
     return (
-        <>
-            <div>
-                <h1>Learn React</h1>
-                <input ref={inputRef} type='text' placeholder='Focus me' />
-                <button onClick={focusInput}>Focus</button>
-            </div>
-        </>
+        <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
+            <h2>App Component</h2>
+            <ComponentA theme={theme}/>
+        </div>
     )
 
 }
