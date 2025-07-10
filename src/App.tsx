@@ -1,11 +1,11 @@
 import './App.css'
-import ParentComponent from './ParentComponent';
+import DigitalClock from './DigitalClock';
 
 function App() {
 
     return (
         <>
-            <ParentComponent/>
+            <DigitalClock/>
         </>
     )
 

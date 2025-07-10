@@ -87,17 +87,18 @@ hr {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0, 1);
-    background-color: #3e3a3a; 
+    background-color: #3e3a3a;
     font-family: monospace;
 }
 
-h2, h3 {
+h2,
+h3 {
     text-align: center;
     color: darkcyan;
 }
 
 .form-field {
-   margin-bottom: 20px; 
+    margin-bottom: 20px;
 }
 
 label {
@@ -108,7 +109,8 @@ label {
     color: whitesmoke;
 }
 
-input[type="text"], select {
+input[type="text"],
+select {
     width: 80%;
     padding: 8px;
     border: 1px solid #ccc;
@@ -124,12 +126,13 @@ input[type="radio"] {
     margin-right: 5px;
 }
 
-.form-data{
+.form-data {
     margin-top: 30px;
     padding: 10px;
     border: 1px solid;
     border-radius: 4px;
 }
+
 .form-data p {
     font-size: 16px;
 }
@@ -142,7 +145,7 @@ input[type="radio"] {
 }
 
 h1 {
-    color: #f0f0f0; 
+    color: #f0f0f0;
 }
 
 .color-palette {
@@ -163,7 +166,7 @@ h1 {
     margin-top: 20px;
 }
 
-.custom-color-picker input{
+.custom-color-picker input {
     cursor: pointer;
     border: none;
     padding: 10px;
@@ -182,4 +185,22 @@ h1 {
     margin: 0px;
     padding-top: 40px;
     min-height: 100vh;
+}
+
+.clock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #282c34;
+}
+
+.digital-clock {
+    font-size: 4rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: cyan;
+    background-color: #20232a;
+    padding: 20px 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 15px 6px rgb(0 0 255 / 0.2);
 }
