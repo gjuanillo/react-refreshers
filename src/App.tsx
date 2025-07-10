@@ -1,23 +1,25 @@
+import { createContext, useContext } from 'react';
 import './App.css'
 
-function ComponentA({ theme }: { theme: string }) {
+function ComponentA() {
     return (
         <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
             <h2>Component A</h2>
-            <ComponentB theme={theme}/>
+            <ComponentB/>
         </div>
     )
 }
 
-function ComponentB({ theme }: { theme: string }) {
+function ComponentB() {
     return (
         <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
             <h2>Component B</h2>
-            <ThemedComponent theme={theme}/>
+            <ThemedComponent/>
         </div>
     )
 }
-function ThemedComponent({ theme }: { theme: string }){
+function ThemedComponent(){
+    const theme = useContext(ThemeContext);
     return (
         <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
             <h2>Themed Component</h2>
@@ -26,13 +28,13 @@ function ThemedComponent({ theme }: { theme: string }){
     )
 }
 
+const ThemeContext = createContext<string>('dark');
 function App() {
-    const theme: string = 'dark';
 
     return (
         <div style={{border:'2px solid black', padding:'10px', justifyItems:'center'}}>
             <h2>App Component</h2>
-            <ComponentA theme={theme}/>
+            <ComponentA/>
         </div>
     )
 
