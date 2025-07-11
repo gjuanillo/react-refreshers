@@ -7,17 +7,31 @@ type Post = {
     body: string
 }
 function GetAPI() {
-    const [data, setData] = useState<Post[] | null>(null);
+    const [data, setData] = useState<Post[]>([]);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [error, setError] = useState<string | null>(null);
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(response => response.json())
-            .then(json => setData(json))
+        const fetchData = async () => {
+            try {
+                setLoading(true);
+                const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+                if (!res.ok) throw new Error(`Status ${res.status}`);
+                const json = await res.json();
+                setData(json);
+            } catch (err) {
+                console.error("Error fetching data:", err);
+                setError("Failed to load data.");
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
     }, []);
 
-    if (data === null) {
-        return <p>Loading...</p>
-    }
-
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>{error}</p>;
+    if (data?.length === 0) return <p>No posts found</p>;
     return (
         <>
             <h2>API's</h2>
