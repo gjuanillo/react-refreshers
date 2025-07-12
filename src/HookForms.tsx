@@ -7,9 +7,10 @@ type FormFields = {
 }
 
 function HookForms() {
-    const { register, handleSubmit, watch, formState: { errors } } = useForm<FormFields>({mode:'onBlur'});
+    const { register, handleSubmit, watch, reset, formState: { errors } } = useForm<FormFields>({mode:'onBlur'});
     const onSubmit: SubmitHandler<FormFields> = (data): void => {
         console.log(data);
+        reset();
     };
     const watchName = watch('name');
     const watchEmail = watch('email');
@@ -53,6 +54,7 @@ function HookForms() {
                 </label>
                 {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
                 <button type='submit'>Submit</button>
+                <button type='button' onClick={() => reset()}>Reset</button>
             </form>
         </div>
     )
