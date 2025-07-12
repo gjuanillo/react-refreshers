@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 type Post = {
     userId: number;
@@ -10,23 +11,17 @@ function GetAPI() {
     const [data, setData] = useState<Post[]>([]);
     const [loading, setLoading] = useState<boolean>(false);
     const [error, setError] = useState<string | null>(null);
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                setLoading(true);
-                const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-                if (!res.ok) throw new Error(`Status ${res.status}`);
-                const json = await res.json();
-                setData(json);
-            } catch (err) {
+        setLoading(true);
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+            .then(res => {
+                console.log(res);
+                setData(res.data);
+            }).catch(err => {
                 console.error("Error fetching data:", err);
                 setError("Failed to load data.");
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
+            }).finally(() => setLoading(false))
     }, []);
 
     if (loading) return <p>Loading...</p>;
@@ -48,3 +43,22 @@ function GetAPI() {
 }
 
 export default GetAPI;
+
+
+
+// const fetchData = async () => {
+//     try {
+//         setLoading(true);
+//         const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+//         if (!res.ok) throw new Error(`Status ${res.status}`);
+//         const json = await res.json();
+//         setData(json);
+//     } catch (err) {
+//         console.error("Error fetching data:", err);
+//         setError("Failed to load data.");
+//     } finally {
+//         setLoading(false);
+//     }
+// };
+//
+// fetchData();
