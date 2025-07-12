@@ -1,5 +1,5 @@
 import React from "react";
-import axios from "axios";
+import api from "./api/api";
 import { useState } from "react";
 
 type Post = {
@@ -8,23 +8,6 @@ type Post = {
     userId: number
 }
 
-const api = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com',
-    headers: {
-        'Authorization': 'Bearer <TOKEN>',
-        'Content-Type': 'application/json'
-    }
-});
-
-api.interceptors.request.use(request => {
-    console.log('Starting Request', request);
-    return request;
-});
-
-api.interceptors.response.use(response => {
-    console.log('Response ', response)
-    return response;
-});
 
 function APIPost() {
     const [data, setData] = useState<Post[]>([]);
