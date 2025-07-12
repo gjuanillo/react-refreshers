@@ -14,11 +14,15 @@ function GetAPI() {
 
     useEffect(() => {
         setLoading(true);
-        axios.get('https://jsonplaceholder.typicode.com/posts')
-            .then(res => {
-                console.log(res);
-                setData(res.data);
-            }).catch(err => {
+        axios.all([
+            axios.get('https://jsonplaceholder.typicode.com/posts'),
+            axios.get('https://jsonplaceholder.typicode.com/users')
+        ])
+            .then(axios.spread((posts, users) => {
+                console.log(posts);
+                console.log(users);
+                setData(posts.data);
+            })).catch(err => {
                 console.error("Error fetching data:", err);
                 setError("Failed to load data.");
             }).finally(() => setLoading(false))
