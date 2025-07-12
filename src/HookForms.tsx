@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useForm, type SubmitHandler } from "react-hook-form";
 
 type FormFields = {
@@ -6,10 +7,20 @@ type FormFields = {
 }
 
 function HookForms() {
-    const { register, handleSubmit } = useForm<FormFields>();
+    const { register, handleSubmit, watch } = useForm<FormFields>();
     const onSubmit: SubmitHandler<FormFields> = (data): void => {
         console.log(data);
     };
+    const watchName : string = watch('name');
+    const watchEmail : string = watch('email');
+
+    useEffect(() => {
+        console.log('Name', watchName);
+    }, [watchName]);
+
+    useEffect(() => {
+        console.log('Email', watchEmail);
+    }, [watchEmail]);
 
     return (
         <div>
