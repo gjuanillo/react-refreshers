@@ -8,12 +8,20 @@ type Post = {
     userId: number
 }
 
-axios.interceptors.request.use(request => {
+const api = axios.create({
+    baseURL: 'https://jsonplaceholder.typicode.com',
+    headers: {
+        'Authorization': 'Bearer <TOKEN>',
+        'Content-Type': 'application/json'
+    }
+});
+
+api.interceptors.request.use(request => {
     console.log('Starting Request', request);
     return request;
 });
 
-axios.interceptors.response.use(response => {
+api.interceptors.response.use(response => {
     console.log('Response ', response)
     return response;
 });
@@ -27,7 +35,7 @@ function APIPost() {
             body: 'bar',
             userId: 1
         }
-        axios.post('https://jsonplaceholder.typicode.com/posts', newPost)
+        api.post('/posts', newPost)
             .then(res => {
                 console.log('New Post Added: ', res.data);
                 setData([res.data, ...data]);
