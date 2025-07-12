@@ -1,11 +1,10 @@
-import APIPost from './APIPost';
 import './App.css'
+import HookForms from './HookForms';
 
 function App() {
-
     return (
         <>
-            <APIPost/>
+            <HookForms />
         </>
     )
 }
