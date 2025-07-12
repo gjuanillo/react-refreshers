@@ -7,12 +7,12 @@ type FormFields = {
 }
 
 function HookForms() {
-    const { register, handleSubmit, watch } = useForm<FormFields>();
+    const { register, handleSubmit, watch, formState: { errors } } = useForm<FormFields>({mode:'onBlur'});
     const onSubmit: SubmitHandler<FormFields> = (data): void => {
         console.log(data);
     };
-    const watchName : string = watch('name');
-    const watchEmail : string = watch('email');
+    const watchName = watch('name');
+    const watchEmail = watch('email');
 
     useEffect(() => {
         console.log('Name', watchName);
@@ -28,12 +28,30 @@ function HookForms() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>
                     Name:
-                    <input {...register('name')} />
+                    <input type="text"
+                        {...register('name',
+                            {
+                                required: "Name is required!",
+                                minLength: {
+                                    value: 3,
+                                    message: "Name should be at least 3 characters!"
+                                }
+                            })} />
                 </label>
+                {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
                 <label>
                     Email:
-                    <input {...register('email')} />
+                    <input type="email"
+                        {...register('email',
+                            {
+                                required: "Email is required!",
+                                pattern: {
+                                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                                    message: "Please input valid email!"
+                                }
+                            })} />
                 </label>
+                {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
                 <button type='submit'>Submit</button>
             </form>
         </div>
