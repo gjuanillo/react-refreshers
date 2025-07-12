@@ -1,11 +1,11 @@
+import APIPost from './APIPost';
 import './App.css'
-import GetAPI from './GetAPI';
 
 function App() {
 
     return (
         <>
-            <GetAPI/>
+            <APIPost/>
         </>
     )
 }
