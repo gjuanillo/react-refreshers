@@ -23,6 +23,13 @@ function HookForms() {
         console.log('Email', watchEmail);
     }, [watchEmail]);
 
+    const validateName = (value: string) => {
+        if (value === 'admin') {
+            return 'Admin is not allowed';
+        }
+        return true;
+    }
+
     return (
         <div>
             <h1>Forms in React</h1>
@@ -36,6 +43,10 @@ function HookForms() {
                                 minLength: {
                                     value: 3,
                                     message: "Name should be at least 3 characters!"
+                                },
+                                validate: {
+                                    notAdmin: validateName,
+                                    isNotNumber: (value) => isNaN(Number(value)) || "Name cannot be number"
                                 }
                             })} />
                 </label>
@@ -49,7 +60,8 @@ function HookForms() {
                                 pattern: {
                                     value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
                                     message: "Please input valid email!"
-                                }
+                                },
+                                validate: (value) => value !== "admin@email.com" || "Admin is not allowed"
                             })} />
                 </label>
                 {errors.email && <p style={{ color: 'red' }}>{errors.email.message}</p>}
