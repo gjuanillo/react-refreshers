@@ -1,16 +1,20 @@
 import './App.css'
+import ToggleDark from './ToggleDark';
 
 function App() {
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="bg-white p-6 rounded-2xl shadow-md max-w-sm w-full">
-                <h1 className="text-2xl font-bold text-gray-800 mb-2">Hello, React + Tailwind!</h1>
-                <p className="text-gray-600 mb-4">
-                    This is a basic component styled with Tailwind CSS.
-                </p>
-                <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
-                    Click Me
-                </button>
+
+        <div className="min-h-screen dark:bg-gray-800 bg-sky-50 flex items-center justify-center px-4">
+            <div className="max-w-md w-full bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl shadow-md p-6 space-y-6">
+                <div className="space-y-2 text-center">
+                    <h1 className="text-2xl font-semibold text-gray-800 dark:text-sky-200">Dark Mode</h1>
+                    <p className="text-gray-800 dark:text-sky-200">
+                        This is an example of implementing dark mode using Tailwind CSS
+                    </p>
+                </div>
+                <div className="flex justify-center">
+                    <ToggleDark />
+                </div>
             </div>
         </div>
     )
