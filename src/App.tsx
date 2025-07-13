@@ -1,22 +1,32 @@
 import './App.css'
-import ToggleDark from './ToggleDark';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './home';
+import AboutRoute from './AboutRoute';
+import ContactRoute from './ContactRoute';
 
 function App() {
     return (
-
-        <div className="min-h-screen dark:bg-gray-800 bg-sky-50 flex items-center justify-center px-4">
-            <div className="max-w-md w-full bg-white/70 dark:bg-white/5 backdrop-blur-sm rounded-2xl shadow-md p-6 space-y-6">
-                <div className="space-y-2 text-center">
-                    <h1 className="text-2xl font-semibold text-gray-800 dark:text-sky-200">Dark Mode</h1>
-                    <p className="text-gray-800 dark:text-sky-200">
-                        This is an example of implementing dark mode using Tailwind CSS
-                    </p>
-                </div>
-                <div className="flex justify-center">
-                    <ToggleDark />
+        <Router>
+            <div className='min-h-screen bg-gray-200'>
+                <nav className='bg-blue-600 p-4'>
+                    <ul className='flex justify-end space-x-6'>
+                        <li><Link className='text-white hover:text-yellow-400 
+                            font-medium transition duration-300' to='/'>Home</Link></li>
+                        <li><Link className='text-white hover:text-yellow-400 
+                            font-medium transition duration-300'  to='/about'>About</Link></li>
+                        <li><Link className='text-white hover:text-yellow-400 
+                            font-medium transition duration-300' to='/contact'>Contact</Link></li>
+                    </ul>
+                </nav>
+                <div className='container mx-auto py-8'>
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/about" element={<AboutRoute />} />
+                        <Route path="/contact" element={<ContactRoute />} />
+                    </Routes>
                 </div>
             </div>
-        </div>
+        </Router>
     )
 }
 
