@@ -5,6 +5,7 @@ import AboutRoute from './AboutRoute';
 import ContactRoute from './ContactRoute';
 import Team from './Team';
 import NotFound from './NotFound';
+import CurrentLocation from './CurrentLocation';
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                             font-medium transition duration-300' to='/contact'>Contact</Link></li>
                     </ul>
                 </nav>
+                <CurrentLocation />
                 <div className='container mx-auto py-8'>
                     <Routes>
                         <Route path="/" element={<Home />} />
