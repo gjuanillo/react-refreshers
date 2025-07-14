@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Home from './home';
 import AboutRoute from './AboutRoute';
 import ContactRoute from './ContactRoute';
+import Team from './Team';
+import NotFound from './NotFound';
 
 function App() {
     return (
@@ -21,8 +23,11 @@ function App() {
                 <div className='container mx-auto py-8'>
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/about" element={<AboutRoute />} />
+                        <Route path="/about" element={<AboutRoute />}>
+                            <Route path="team" element={<Team />} />
+                        </Route>
                         <Route path="/contact" element={<ContactRoute />} />
+                        <Route path="*" element={<NotFound />} />
                     </Routes>
                 </div>
             </div>
